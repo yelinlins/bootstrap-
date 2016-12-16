@@ -1,0 +1,17 @@
+<!--页码控制模板-->
+
+<ul class="pagination">
+    <li {{if currentPage==1}}class="disabled"{{/if}}>
+    	<a onclick="prePage()">&laquo;</a>
+    </li>
+    {{each pageArray as page}}
+    <li {{if currentPage==page}}class="active"{{/if}}>
+    	<a onclick="gotoPage(event)">
+    		{{page}}
+    	</a>
+    </li>
+    {{/each}}
+    <li {{if currentPage==totalPage}}class="disabled"{{/if}}>
+    	<a onclick="nextPage()">&raquo;</a>
+    </li>
+</ul>
